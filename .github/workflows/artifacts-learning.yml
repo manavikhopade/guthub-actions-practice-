@@ -18,8 +18,8 @@ jobs:
   'Get':
     runs-on: ubuntu-latest
     steps: 
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - name: Check o/p
+      run: ls -la
     - name: Get artifcats
       uses: actions/download-artifact@v4
       with:
