@@ -18,9 +18,9 @@ jobs:
   'Get':
     runs-on: ubuntu-latest
     steps: 
-    - name: Check o/p
-      run: ls -la
     - name: Get artifcats
       uses: actions/download-artifact@v4
       with:
         name: readme
+    - name: Check o/p
+      run: ls -la
