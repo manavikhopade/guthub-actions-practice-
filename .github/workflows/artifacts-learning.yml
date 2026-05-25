@@ -1,0 +1,26 @@
+name: Understanding Job Artifacts
+on: 
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+jobs:
+  'Upload':
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Upload artifacts 
+      uses: actions/upload-artifact@v3
+      with:
+        name: readme
+        path: README.md
+  'Get':
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Get artifcats
+      uses: actions/download-artifact@v3
+      with:
+        name: readme
